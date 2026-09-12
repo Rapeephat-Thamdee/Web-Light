@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ควบคุมไฟบ้านจำลอง</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="wrap">
+    <header>
+      <div>
+        <!-- <p class="eyebrow">feufuhfuuhfhf</p> -->
+        <h1>ควบคุมไฟบ้าน</h1>
+      </div>
+    </header>
+
+    <div class="layout">
+      <div class="plan-card">
+        <img src="floorplan.png" alt="ผังห้อง">
+        <button class="hotspot" data-key="light1" style="top: 9.1%; left: 38.1%;">
+          <svg viewBox="0 0 24 24"><path class="bulb-fill" d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2zm-2 18a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-1H10v1z"/></svg>
+          <span class="tag">ไฟ 1</span>
+        </button>
+        <button class="hotspot" data-key="light2" style="top: 16.2%; left: 76.7%;">
+          <svg viewBox="0 0 24 24"><path class="bulb-fill" d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2zm-2 18a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-1H10v1z"/></svg>
+          <span class="tag">ไฟ 2</span>
+        </button>
+        <button class="hotspot" data-key="light3" style="top: 36.0%; left: 40.8%;">
+          <svg viewBox="0 0 24 24"><path class="bulb-fill" d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2zm-2 18a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-1H10v1z"/></svg>
+          <span class="tag">ไฟ 3</span>
+        </button>
+        <button class="hotspot" data-key="light4" style="top: 72.8%; left: 40.8%;">
+          <svg viewBox="0 0 24 24"><path class="bulb-fill" d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2zm-2 18a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-1H10v1z"/></svg>
+          <span class="tag">ไฟ 4</span>
+        </button>
+      </div>
+
+      <div class="controls-col">
+        <div class="stats-card">
+          <div class="stats-row">
+            <span class="stats-time" id="clockTime">--:--:--</span>
+            <span class="stats-date" id="clockDate">-</span>
+          </div>
+          <div class="stats-divider"></div>
+          <div class="stats-row stats-row-bottom">
+            <div class="stats-status">
+              <span class="dot live" id="statusDot"></span>
+              <span id="statusText">เชื่อมต่อแล้ว</span>
+            </div>
+            <div class="stats-oncount">เปิดอยู่ <strong id="onCount">0/4</strong></div>
+          </div>
+        </div>
+
+        <div class="all-buttons">
+          <button class="all-btn on-btn" id="allOnBtn">เปิดทั้งหมด</button>
+          <button class="all-btn off-btn" id="allOffBtn">ปิดทั้งหมด</button>
+        </div>
+        <div class="legend" id="legend">
+          <div class="legend-item" data-key="light1"><span class="swatch"></span><div class="info"><div class="name">ไฟ 1</div><div class="state">ปิด</div></div></div>
+          <div class="legend-item" data-key="light2"><span class="swatch"></span><div class="info"><div class="name">ไฟ 2</div><div class="state">ปิด</div></div></div>
+          <div class="legend-item" data-key="light3"><span class="swatch"></span><div class="info"><div class="name">ไฟ 3</div><div class="state">ปิด</div></div></div>
+          <div class="legend-item" data-key="light4"><span class="swatch"></span><div class="info"><div class="name">ไฟ 4</div><div class="state">ปิด</div></div></div>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
