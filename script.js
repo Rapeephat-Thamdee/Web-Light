@@ -1,6 +1,13 @@
-// ---------- TODO: fill in your Firebase Realtime Database URL ----------
-  // Example: "https://your-project-id-default-rtdb.asia-southeast1.firebasedatabase.app"
-  const DATABASE_URL = "https://smart-home-lights-98cc2-default-rtdb.asia-southeast1.firebasedatabase.app/";
+// DATABASE_URL comes from config.js (loaded before this file).
+(function () {
+  const session = requireAuth(false);
+  if (!session) return; // requireAuth already redirects to login.html
+
+  document.getElementById("userName").textContent = session.username;
+  document.getElementById("logoutBtn").addEventListener("click", logout);
+  if (session.role === "admin") {
+    document.getElementById("adminLink").style.display = "";
+  }
 
   const POLL_INTERVAL_MS = 2000;
   const keys = ["light1", "light2", "light3", "light4"];
@@ -105,3 +112,4 @@
 
   fetchState();
   setInterval(fetchState, POLL_INTERVAL_MS);
+})();

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>แผงแอดมิน · ควบคุมไฟบ้าน</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>แผงแอดมิน</h1>
+      </div>
+      <div class="user-box">
+        <span class="user-name">แอดมิน: <strong id="adminName"></strong></span>
+        <a href="index.html" class="admin-link">กลับหน้าควบคุม</a>
+        <button id="logoutBtn" class="logout-btn">ออกจากระบบ</button>
+      </div>
+    </header>
+
+    <div class="admin-layout">
+      <section class="admin-card">
+        <h2>ผู้ใช้ทั้งหมด</h2>
+        <div class="user-list" id="userList">
+          <p class="dim-text">กำลังโหลด...</p>
+        </div>
+      </section>
+
+      <section class="admin-card">
+        <h2>เพิ่มผู้ใช้ใหม่</h2>
+        <form id="addUserForm" class="admin-form" autocomplete="off">
+          <label class="field">
+            <span>ชื่อผู้ใช้</span>
+            <input type="text" id="newUsername" required>
+          </label>
+          <label class="field">
+            <span>รหัสผ่าน</span>
+            <input type="password" id="newPassword" required minlength="4">
+          </label>
+          <label class="field">
+            <span>สิทธิ์</span>
+            <select id="newRole">
+              <option value="user">ผู้ใช้ทั่วไป</option>
+              <option value="admin">แอดมิน</option>
+            </select>
+          </label>
+          <button type="submit" class="all-btn on-btn">เพิ่มผู้ใช้</button>
+          <p class="login-msg" id="addMsg"></p>
+        </form>
+      </section>
+
+      <section class="admin-card">
+        <h2>เปลี่ยนรหัสผ่าน</h2>
+        <form id="changePassForm" class="admin-form" autocomplete="off">
+          <label class="field">
+            <span>เลือกผู้ใช้</span>
+            <select id="userSelect"></select>
+          </label>
+          <label class="field">
+            <span>รหัสผ่านใหม่</span>
+            <input type="password" id="changePassword" required minlength="4">
+          </label>
+          <button type="submit" class="all-btn on-btn">บันทึกรหัสผ่านใหม่</button>
+          <p class="login-msg" id="changeMsg"></p>
+        </form>
+      </section>
+    </div>
+  </div>
+
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

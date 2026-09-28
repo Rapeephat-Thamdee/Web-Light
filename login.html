@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เข้าสู่ระบบ · ควบคุมไฟบ้าน</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+  <div class="grain"></div>
+  <div class="login-wrap">
+    <form class="login-card" id="loginForm" autocomplete="off">
+      <h1>ควบคุมไฟบ้าน</h1>
+      <p class="login-sub">เข้าสู่ระบบเพื่อควบคุมไฟภายในบ้าน</p>
+
+      <label class="field">
+        <span>ชื่อผู้ใช้</span>
+        <input type="text" id="username" name="username" required autocomplete="username">
+      </label>
+
+      <label class="field">
+        <span>รหัสผ่าน</span>
+        <input type="password" id="password" name="password" required autocomplete="current-password">
+      </label>
+
+      <button type="submit" class="login-btn">เข้าสู่ระบบ</button>
+      <p class="login-msg" id="loginMsg"></p>
+    </form>
+  </div>
+
+<script src="config.js"></script>
+<script src="auth.js"></script>
+<script src="login.js"></script>
+</body>
+</html>
